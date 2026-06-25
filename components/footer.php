@@ -38,6 +38,8 @@
               <li><a href="#" onclick="openWorkshop('umum'); return false;">Power Sistem & Sumga</a></li>
               <li><a href="#" onclick="openWorkshop('elektronika'); return false;">Sistem Elektronika</a></li>
               <li><a href="#" onclick="openWorkshop('komunikasi'); return false;">Sistem Komunikasi</a></li>
+              <li><a href="#" onclick="openWorkshop('senjata'); return false;">Bengkel Jaringan Internet & TIK</a></li>
+              <li><a href="#" onclick="openWorkshop('kendaraan'); return false;">Gudang</a></li>
             </ul>
           </div>
 

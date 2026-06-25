@@ -113,7 +113,7 @@
             <div class="timeline-connector"></div>
             <div class="pimpinan-card-small">
               <div class="pimpinan-photo-small">
-                <span> 😬 </span>
+                <span> .... </span>
               </div>
               <div class="pimpinan-info-small">
                 <div class="pimpinan-jabatan-label-small">Kepala Bengpuskomlekad</div>

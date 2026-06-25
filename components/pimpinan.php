@@ -94,15 +94,15 @@
           </div>
 
           <div class="pimpinan-timeline-item fade-in">
-            <div class="timeline-year">2019 – 2022</div>
+            <div class="timeline-year">2020 – 2022</div>
             <div class="timeline-connector"></div>
             <div class="pimpinan-card-small">
               <div class="pimpinan-photo-small">
-                <img src="assets/images/kabeng-haryono.jpg" alt="Kolonel Chb Try Haryono, S.sos., M.M." class="pimpinan-kabeng-lama">
+                <span> .... </span>
               </div>
               <div class="pimpinan-info-small">
                 <div class="pimpinan-jabatan-label-small">Kepala Bengpuskomlekad</div>
-                <div class="pimpinan-nama-small">Kolonel Chb Try Haryono, S.sos., M.M.</div>
+                <div class="pimpinan-nama-small">Kolonel Chb Anang Murtioso, S.Si.</div>
                 <div class="pimpinan-nrp-small">NRP: 11XXXXXX</div>
               </div>
             </div>
@@ -113,11 +113,11 @@
             <div class="timeline-connector"></div>
             <div class="pimpinan-card-small">
               <div class="pimpinan-photo-small">
-                <span> .... </span>
+                <img src="assets/images/kabeng-haryono.jpg" alt="Kolonel Chb Try Haryono, S.sos., M.M." class="pimpinan-kabeng-lama">
               </div>
               <div class="pimpinan-info-small">
                 <div class="pimpinan-jabatan-label-small">Kepala Bengpuskomlekad</div>
-                <div class="pimpinan-nama-small">Kolonel Chb Anang Murtioso, S.Si.</div>
+                <div class="pimpinan-nama-small">Kolonel Chb Try Haryono, S.sos., M.M.</div>
                 <div class="pimpinan-nrp-small">NRP: 11XXXXXX</div>
               </div>
             </div>

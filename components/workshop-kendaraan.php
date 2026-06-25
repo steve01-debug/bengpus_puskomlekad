@@ -6,10 +6,11 @@
         <img src="assets/images/bengkel-kendaraan.png" alt="Bengkel Kendaraan Tempur">
       </div>
       <div class="workshop-hero-content">
-        <div class="workshop-badge"><span>Unit Bengkel 02</span></div>
-        <h1>Bengkel <span class="gold-text">Kendaraan Tempur</span></h1>
-        <p>Pusat pemeliharaan dan perbaikan kendaraan tempur dengan standar militer internasional.</p>
+        <div class="workshop-badge"><span>Kagud</span></div>
+        <h1><span class="gold-text">Gudang</span></h1>
+        <p>Gudang merupakan unit utama yang bertanggung jawab atas pemeliharaan, perbaikan, dan modifikasi seluruh jenis kendaraan tempur TNI, termasuk tank, panser, dan kendaraan taktis.</p>
       </div>
+
     </section>
     <section class="workshop-description">
       <div class="container">
@@ -17,58 +18,48 @@
           <div class="workshop-desc-content fade-in-left">
             <h2>Tentang <span class="gold-text">Bengkel</span></h2>
             <div class="gold-line" style="margin-left:0;"></div>
-            <p>Bengkel Kendaraan Tempur merupakan unit utama yang bertanggung jawab atas pemeliharaan, perbaikan, dan modifikasi seluruh jenis kendaraan tempur TNI, termasuk tank, panser, dan kendaraan taktis.</p>
-            <p>Dilengkapi dengan peralatan modern dan teknisi bersertifikasi, bengkel ini mampu menangani perbaikan tingkat berat hingga overhaul komprehensif.</p>
-            <div class="workshop-features">
-              <div class="workshop-feature-item"><span class="feature-icon">⚙️</span><span>Overhaul Mesin</span></div>
-              <div class="workshop-feature-item"><span class="feature-icon">🔧</span><span>Perbaikan Transmisi</span></div>
-              <div class="workshop-feature-item"><span class="feature-icon">🛡️</span><span>Perawatan Armor</span></div>
-              <div class="workshop-feature-item"><span class="feature-icon">📋</span><span>Inspeksi Berkala</span></div>
+            <p class="workshop-paragraf">Bengkel Sistem Elektronika (Kabeng Sislek) bertanggung jawab atas pemeliharaan dan perbaikan seluruh perangkat elektronika militer TNI AD. Dilengkapi laboratorium elektronika berstandar tinggi, bengkel ini mampu melakukan diagnostik dan perbaikan hingga level komponen.</p>
+            <p class="workshop-paragraf">Kabeng Sislek terdiri dari empat subbengkel spesialis yang menangani berbagai aspek sistem elektronika pertahanan darat.</p>
+
+            <!-- Sub-bengkel cards -->
+            <div class="subbeng-grid">
+
+              <div class="subbeng-card">
+                <div class="subbeng-header">
+                  <span class="subbeng-icon">⚡</span>
+                  <div class="subbeng-title">SUBBENG Aldallek</div>
+                </div>
+                <p class="subbeng-desc">Menangani pemeliharaan alat elektronika pendalaman (aldallek) yaitu perangkat deteksi, navigasi, dan sistem kendali tembak elektronik yang menjadi komponen vital dalam operasi pertahanan udara dan darat.</p>
+              </div>
+
+              <div class="subbeng-card">
+                <div class="subbeng-header">
+                  <span class="subbeng-icon">🔬</span>
+                  <div class="subbeng-title">SUBBENG Alpernika</div>
+                </div>
+                <p class="subbeng-desc">Bertanggung jawab atas alat perlengkapan elektronika (alpernika) meliputi perangkat pendukung operasional elektronika lapangan, sistem penguat sinyal, antena taktis, dan perlengkapan elektronika pendukung satuan tempur.</p>
+              </div>
+
+              <div class="subbeng-card">
+                <div class="subbeng-header">
+                  <span class="subbeng-icon">🖥️</span>
+                  <div class="subbeng-title">SUBBENG Matindralek</div>
+                </div>
+                <p class="subbeng-desc">Mengelola perawatan material industri elektronika (matindralek) termasuk komponen elektronika industri yang digunakan dalam sistem persenjataan, kendaraan tempur berteknologi tinggi, dan instalasi tetap militer.</p>
+              </div>
+
+              <div class="subbeng-card">
+                <div class="subbeng-header">
+                  <span class="subbeng-icon">🤖</span>
+                  <div class="subbeng-title">SUBBENG Mekatronika</div>
+                </div>
+                <p class="subbeng-desc">Menangani sistem mekatronika militer yang mengintegrasikan mekanik, elektronika, dan kendali komputer, mencakup sistem aktuator senjata otomatis, robot penjinak bahan peledak (EOD), dan sistem penggerak berbasis servo.</p>
+              </div>
+
             </div>
           </div>
           <div class="workshop-gallery fade-in-right">
-            <img src="assets/images/bengkel-kendaraan.png" alt="Fasilitas Bengkel Kendaraan Tempur">
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="workshop-org">
-      <div class="container">
-        <div class="section-title fade-in">Struktur <span class="gold-text">Organisasi</span></div>
-        <div class="gold-line"></div>
-        <div class="org-chart fade-in">
-          <div class="org-level">
-            <div class="org-card head">
-              <div class="org-avatar">⭐</div>
-              <div class="org-name">Kolonel Budi Santoso</div>
-              <div class="org-position">Kepala Bengkel</div>
-            </div>
-          </div>
-          <div class="org-connector"></div>
-          <div class="org-level">
-            <div class="org-card">
-              <div class="org-avatar">👤</div>
-              <div class="org-name">Letkol Adi Prasetyo</div>
-              <div class="org-position">Wakil Kepala Bengkel</div>
-            </div>
-          </div>
-          <div class="org-connector"></div>
-          <div class="org-level">
-            <div class="org-card">
-              <div class="org-avatar">👤</div>
-              <div class="org-name">Mayor Hendra W.</div>
-              <div class="org-position">Kasi Teknis</div>
-            </div>
-            <div class="org-card">
-              <div class="org-avatar">👤</div>
-              <div class="org-name">Mayor Rudi K.</div>
-              <div class="org-position">Kasi Operasional</div>
-            </div>
-            <div class="org-card">
-              <div class="org-avatar">👤</div>
-              <div class="org-name">Mayor Dedi S.</div>
-              <div class="org-position">Kasi Logistik</div>
-            </div>
+            <img src="assets/images/elektronika.jpeg" alt="Fasilitas Bengkel Sistem Elektronika">
           </div>
         </div>
       </div>

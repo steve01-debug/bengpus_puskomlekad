@@ -38,7 +38,7 @@ $base = $isHome ? '' : 'index.php';
               <a href="<?= $base ?>#" onclick="<?= $isHome ? "openWorkshop('sumga'); return false;" : "window.location.href='index.php?workshop=sumga';" ?>">Bengkel Power Sistem dan Sumber Tenaga</a>
               <a href="<?= $base ?>#" onclick="<?= $isHome ? "openWorkshop('elektronika'); return false;" : "window.location.href='index.php?workshop=elektronika';" ?>">Bengkel Sistem Elektronika</a>
               <a href="<?= $base ?>#" onclick="<?= $isHome ? "openWorkshop('komunikasi'); return false;" : "window.location.href='index.php?workshop=komunikasi';" ?>">Bengkel Sistem Komunikasi</a>
-              <a href="<?= $base ?>#" onclick="<?= $isHome ? "openWorkshop('senjata'); return false;" : "window.location.href='index.php?workshop=senjata';" ?>">Bnegkel Jaringan Internet & TIK</a>
+              <a href="<?= $base ?>#" onclick="<?= $isHome ? "openWorkshop('senjata'); return false;" : "window.location.href='index.php?workshop=senjata';" ?>">Bengkel Jaringan Internet & TIK</a>
               <a href="<?= $base ?>#" onclick="<?= $isHome ? "openWorkshop('kendaraan'); return false;" : "window.location.href='index.php?workshop=kendaraan';" ?>">Gudang</a>
             </div>
           </div>

@@ -13,7 +13,7 @@
         </div>
         <h1 class="hero-title">
           BENGKEL PUSAT
-          <span class="highlight">KOMUNIKASI DAN ELEKTRONIKA ANGKATAN DARAT</span>
+          <span class="highlight">PUSAT KOMUNIKASI DAN ELEKTRONIKA ANGKATAN DARAT</span>
         </h1>
         <p class="hero-subtitle" style="font-style: italic; font-size: 1.2rem;">
           "Mendominasi Ruang Spektrum Elektromagnetik Adalah Inti Kekuatan Komlekad"

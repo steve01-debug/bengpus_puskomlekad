@@ -291,19 +291,19 @@ $totalFeedback = count($feedbacks);
     }
     .feedback-table .td-nama { color: var(--white); font-weight: 500; }
     .feedback-table .td-email a {
-      color: var(--gold);
+      color: var(--white);
       text-decoration: none;
       font-size: 0.82rem;
     }
     .feedback-table .td-email a:hover { color: var(--gold-light); text-decoration: underline; }
     .feedback-table .td-pesan {
-      color: var(--gray-300);
+      color: var(--white);
       max-width: 340px;
       line-height: 1.6;
     }
     .feedback-table .td-waktu {
       font-size: 0.78rem;
-      color: var(--gray-400);
+      color: var(--white);
       white-space: nowrap;
     }
     .reply-btn {
@@ -349,7 +349,7 @@ $totalFeedback = count($feedbacks);
       vertical-align: middle;
     }
     .badge-read {
-      color: var(--gray-400);
+      color: var(--white);
       font-size: 0.75rem;
       padding: 6px 12px;
       background: rgba(255,255,255,0.05);
@@ -458,20 +458,22 @@ $totalFeedback = count($feedbacks);
     <!-- Stats -->
     <div class="stats-row">
       <div class="stat-card">
-        <div class="stat-icon">📨</div>
-        <div class="stat-num"><?= $totalFeedback ?></div>
+        <!--<div class="stat-icon">Total Feedback</div>-->
         <div class="stat-label">Total Feedback</div>
+        <div class="stat-num"><?= $totalFeedback ?></div>
+        <!--<div class="stat-label">Total Feedback</div>-->
       </div>
       <div class="stat-card">
-        <div class="stat-icon">📅</div>
-        <div class="stat-num"><?= date('d') ?></div>
-        <div class="stat-label"><?= date('F Y') ?></div>
+        <!--<div class="stat-icon">📅</div>-->
+        <div class="stat-label">Tanggal</div>
+        <div class="stat-num"><?= date('d F Y') ?></div>
+        <!--<div class="stat-label"><?= date('F Y') ?></div>-->
       </div>
-      <div class="stat-card">
+      <!--<div class="stat-card">
         <div class="stat-icon">🛡️</div>
         <div class="stat-num">1</div>
         <div class="stat-label">Admin Aktif</div>
-      </div>
+      </div>-->
     </div>
 
     <!-- Notice -->
@@ -502,7 +504,7 @@ $totalFeedback = count($feedbacks);
         <table class="feedback-table">
           <thead>
             <tr>
-              <th>#</th>
+              <th>No</th>
               <th>Nama</th>
               <th>Email</th>
               <th>Pesan</th>
@@ -517,7 +519,7 @@ $totalFeedback = count($feedbacks);
               $mailtoLink   = "mailto:" . htmlspecialchars($fb['email']) . "?subject=" . $replySubject . "&body=" . $replyBody;
             ?>
             <tr>
-              <td style="color:var(--gray-500); font-size:0.78rem;"><?= $i + 1 ?></td>
+              <td style="color:var(--white); font-size:0.78rem;"><?= $i + 1 ?></td>
               <td class="td-nama">
                 <?= htmlspecialchars($fb['nama']) ?>
                 <?php if (isset($fb['is_read']) && $fb['is_read'] == 0): ?>
@@ -528,7 +530,7 @@ $totalFeedback = count($feedbacks);
                 <a href="mailto:<?= htmlspecialchars($fb['email']) ?>"><?= htmlspecialchars($fb['email']) ?></a>
               </td>
               <td class="td-pesan"><?= nl2br(htmlspecialchars($fb['pesan'])) ?></td>
-              <td class="td-waktu"><?= date('d M Y', strtotime($fb['created_at'])) ?><br><span style="color:var(--gray-500);"><?= date('H:i', strtotime($fb['created_at'])) ?></span></td>
+              <td class="td-waktu"><?= date('d M Y', strtotime($fb['created_at'])) ?><br><span style="color:var(--white);"><?= date('H:i', strtotime($fb['created_at'])) ?></span></td>
               <td>
                 <a href="<?= $mailtoLink ?>" class="reply-btn">✉ Balas</a>
                 <br>

@@ -32,12 +32,14 @@ $base = $isHome ? '' : 'index.php';
         <a href="<?= $base ?>#contact" data-nav="contact" onclick="<?= $isHome ? 'closeMobileMenu()' : '' ?>">Kontak</a>
         <div class="nav-dropdown" id="bengkel-dropdown">
           <button class="dropdown-trigger" onclick="toggleMobileDropdown(event)">
-            Bengkel <span class="arrow">▼</span>
+            Unit <span class="arrow">▼</span>
           </button>
             <div class="dropdown-menu">
               <a href="<?= $base ?>#" onclick="<?= $isHome ? "openWorkshop('sumga'); return false;" : "window.location.href='index.php?workshop=sumga';" ?>">Bengkel Power Sistem dan Sumber Tenaga</a>
               <a href="<?= $base ?>#" onclick="<?= $isHome ? "openWorkshop('elektronika'); return false;" : "window.location.href='index.php?workshop=elektronika';" ?>">Bengkel Sistem Elektronika</a>
               <a href="<?= $base ?>#" onclick="<?= $isHome ? "openWorkshop('komunikasi'); return false;" : "window.location.href='index.php?workshop=komunikasi';" ?>">Bengkel Sistem Komunikasi</a>
+              <a href="<?= $base ?>#" onclick="<?= $isHome ? "openWorkshop('senjata'); return false;" : "window.location.href='index.php?workshop=senjata';" ?>">Bnegkel Jaringan Internet & TIK</a>
+              <a href="<?= $base ?>#" onclick="<?= $isHome ? "openWorkshop('kendaraan'); return false;" : "window.location.href='index.php?workshop=kendaraan';" ?>">Gudang</a>
             </div>
           </div>
         <a href="<?= $base ?>#" data-nav="pimpinan" onclick="<?= $isHome ? "openSpecialPage('pimpinan'); closeMobileMenu(); return false;" : "window.location.href='index.php?page=pimpinan';" ?>">Pimpinan</a>

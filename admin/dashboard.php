@@ -56,33 +56,52 @@ $totalFeedback = count($feedbacks);
     }
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--navy-darkest);
+      background: linear-gradient(135deg, #273343ff 0%, #060d1a 100%);
       color: var(--white);
       min-height: 100vh;
     }
+
+     body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridMove 20s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes gridMove {
+      0%   { background-position: 0 0; }
+      100% { background-position: 60px 60px; }
+    }
+    
     /* Sidebar */
     .sidebar {
       position: fixed;
       top: 0; left: 0;
       width: 260px;
       height: 100vh;
-      background: rgba(10,22,40,0.97);
-      border-right: 1px solid rgba(201,168,76,0.15);
+      background: transparent
+      border: none; 
+      border-right: 1px solid rgba(201,168,76,0.15); 
       display: flex;
       flex-direction: column;
       z-index: 100;
       padding: 28px 0;
+
     }
     .sidebar-logo {
       padding: 0 24px 28px;
       border-bottom: 1px solid rgba(201,168,76,0.1);
     }
     .sidebar-logo .logo-img-wrap {
-      width: 52px;
-      height: 52px;
+      width: 100px;
+      height: 100px;
       border-radius: 10px;
-      background: rgba(201,168,76,0.1);
-      border: 1px solid rgba(201,168,76,0.25);
+      /*background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);*/
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 12px;
       overflow: hidden;
@@ -182,7 +201,7 @@ $totalFeedback = count($feedbacks);
       align-items: center;
       gap: 16px;
     }
-    .admin-badge {
+    /*.admin-badge {
       padding: 6px 16px;
       background: rgba(201,168,76,0.1);
       border: 1px solid rgba(201,168,76,0.3);
@@ -192,7 +211,7 @@ $totalFeedback = count($feedbacks);
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--gold);
-    }
+    }*/
     .content-area {
       padding: 36px;
     }
@@ -204,16 +223,19 @@ $totalFeedback = count($feedbacks);
       margin-bottom: 36px;
     }
     .stat-card {
-      background: rgba(10,22,40,0.6);
-      border: 1px solid rgba(201,168,76,0.15);
-      border-radius: 12px;
+      background: Colorless
+      /*border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 12px;*/
+      border: none; 
+      border-right: 1px solid rgba(255,255,255,0.2); 
+      border-radius: 0; 
       padding: 24px;
       transition: all 0.3s;
     }
-    .stat-card:hover {
+    /*.stat-card:hover {
       border-color: rgba(201,168,76,0.3);
       transform: translateY(-2px);
-    }
+    }*/
     .stat-card .stat-icon {
       font-size: 2rem;
       margin-bottom: 12px;
@@ -381,9 +403,10 @@ $totalFeedback = count($feedbacks);
     }
     .filter-tabs a {
       padding: 8px 16px;
-      background: rgba(10,22,40,0.6);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
+      background: colorless;
+      border: none; 
+      border-right: 1px solid rgba(255,255,255,0.2); 
+      border-radius: 0;
       color: var(--gray-300);
       font-size: 0.85rem;
       text-decoration: none;
@@ -427,8 +450,8 @@ $totalFeedback = count($feedbacks);
     <div class="logo-img-wrap">
       <img src="../assets/images/logo-bengpus.png" alt="Logo">
     </div>
-    <h2>BENGPUS<span>KOMLEKAD</span></h2>
-    <p>Admin Panel</p>
+    <h2>BENGPUS<span> PUSKOMLEKAD</span></h2>
+    <!--<p>Admin Panel</p>-->
   </div>
   <nav class="sidebar-nav">
     <a href="dashboard.php" class="active">
@@ -440,7 +463,7 @@ $totalFeedback = count($feedbacks);
   </nav>
   <div class="sidebar-footer">
     <a href="logout.php" class="logout-btn">
-      <span>⎋</span> Keluar
+      <span>Logout</span>
     </a>
   </div>
 </aside>
@@ -449,9 +472,9 @@ $totalFeedback = count($feedbacks);
 <main class="main-content">
   <div class="topbar">
     <h1>Dashboard <span>Admin</span></h1>
-    <div class="topbar-info">
+    <!--<div class="topbar-info">
       <span class="admin-badge">🔐 Admin</span>
-    </div>
+    </div>-->
   </div>
 
   <div class="content-area">
@@ -537,7 +560,7 @@ $totalFeedback = count($feedbacks);
                 <?php if (isset($fb['is_read']) && $fb['is_read'] == 0): ?>
                   <a href="mark_read.php?id=<?= $fb['id'] ?>&filter=<?= $filter ?>" class="btn-read">✔ Tandai Dibaca</a>
                 <?php else: ?>
-                  <span class="badge-read" style="margin-top: 8px;">Sudah Dibaca</span>
+                  <span class="badge-read" style="margin-top: 8px;">Tandai Dibaca</span>
                 <?php endif; ?>
               </td>
             </tr>

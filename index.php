@@ -17,6 +17,9 @@
 <?php include 'components/workshop-umum.php'; ?>
 <?php include 'components/workshop-elektronika.php'; ?>
 <?php include 'components/workshop-komunikasi.php'; ?>
+<?php include 'components/workshop-senjata.php'; ?>
+<?php include 'components/workshop-kendaraan.php'; ?>
+
 <?php include 'components/pimpinan.php'; ?>
 <?php include 'components/struktur-organisasi.php'; ?>
 

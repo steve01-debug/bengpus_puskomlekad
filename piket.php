@@ -128,6 +128,7 @@ if ($kelas_aktif && !in_array($kelas_aktif, $daftar_kelas)) {
       color: #ff6b7a;
       text-decoration: none;
       padding: 6px 14px;
+      border-radius: 5px;
       border: 1px solid rgba(220,53,69,0.3);
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -210,6 +211,7 @@ if ($kelas_aktif && !in_array($kelas_aktif, $daftar_kelas)) {
       padding: 10px 24px;
       cursor: pointer;
       transition: 0.2s;
+      border-radius: 5px;
     }
     .submit-btn:hover { background: #e8d48b; transform: translateY(-1px); }
 
@@ -349,8 +351,8 @@ if ($kelas_aktif && !in_array($kelas_aktif, $daftar_kelas)) {
           
           <ol style="padding-left: 18px; font-size: 0.88rem; color: var(--gray-300); line-height: 1.8;">
             <li style="margin-bottom: 8px; padding-left: 5px;">Pilih input absensi di bagian Data Apel.</li>
-            <li style="margin-bottom: 8px; padding-left: 5px;">Masukkan data dengan lengkap.</li>
-            <li style="margin-bottom: 8px; padding-left: 5px;">Jika ada keterangan tidak hadir, sebutkan alasan di kolom keterangan.</li>
+            <li style="margin-bottom: 8px; padding-left: 5px;">Masukkan data yang sesuai.</li>
+            <li style="margin-bottom: 8px; padding-left: 5px;">Jika ada keterangan tidak hadir, ketik alasan di kolom keterangan.</li>
             <li style="margin-bottom: 8px; padding-left: 5px;">Pengisian keterangan harap disamakan hurufnya (kapital/huruf kecil).</li>
             <li style="margin-bottom: 0; padding-left: 5px;">Simpan data.</li>
           </ol>
@@ -413,7 +415,7 @@ if ($kelas_aktif && !in_array($kelas_aktif, $daftar_kelas)) {
           </div>
         </div>  
 
-        <div style="margin-top: 25px; padding: 15px; background: rgba(255,255,255,0.02); border: 1px dashed rgba(201,168,76,0.2); font-size: 0.85rem; line-height: 1.6; color: var(--gray-200);">
+        <div style="margin-top: 25px; padding: 15px; background: rgba(255,255,255,0.02); border: 1px dashed rgba(201,168,76,0.2); font-size: 0.85rem; line-height: 1.6; color: var(--gray-200);border-radius: 5px;">
           <!--<strong style="color: var(--gold); display: block; margin-bottom: 10px; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px;">Laporan Narasi Piket:</strong>-->
           <?php 
           if ($jumlah_total > 0) {

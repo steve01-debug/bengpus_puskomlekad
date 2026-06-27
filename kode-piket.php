@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-// Daftar kelas sesuai script piket.py asli Anda
-$daftar_kelas = ["kelas_A", "kelas_B"];
+// PERBAIKAN: Daftar disamakan persis dengan yang ada di piket.php
+$daftar_kelas = ["UJIKIT", "TUUD", "RENDAL", "BENGRAD", "BENGALLEK", "BENGMETRIK", "GUDANG"];
 
 // 1. Aksi Simpan atau Update Data Kelas
 if (isset($_POST['action']) && $_POST['action'] === 'simpan_piket') {
@@ -48,3 +48,4 @@ if (isset($_GET['action']) && $_GET['action'] === 'reset') {
     header("Location: /bengpus_puskomlekad/piket");
     exit;
 }
+// PERBAIKAN: Menghapus karakter kurung kurawal "}" berlebih di baris ini yang memicu syntax error

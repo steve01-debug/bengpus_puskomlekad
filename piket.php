@@ -22,7 +22,7 @@ function tanggal_indonesia($timestamp) {
 
 $tanggal_hari_ini = tanggal_indonesia(time());
 
-$daftar_kelas = ["kelas_A", "kelas_B"];
+$daftar_kelas = ["UJIKIT", "TUUD", "RENDAL", "BENGRAD", "BENGALLEK", "BENGMETRIK", "GUDANG"];
 $rekap = $_SESSION['rekap_piket'] ?? [];
 
 // Hitung akumulasi rekapitulasi sekolah total
@@ -71,7 +71,7 @@ if ($kelas_aktif && !in_array($kelas_aktif, $daftar_kelas)) {
     }
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #273343 0%, #060d1a 100%);
+      background: linear-gradient(135deg, #313944ff 0%, #060d1a 100%);
       color: var(--white);
       min-height: 100vh;
       padding: 50px 20px;
@@ -108,6 +108,13 @@ if ($kelas_aktif && !in_array($kelas_aktif, $daftar_kelas)) {
       align-items: baseline;
       gap: 15px;
     }
+    .header-logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain; 
+      padding-left: 20px;
+    }
+
     header h1 {
       font-family: 'Oswald', sans-serif;
       font-size: 1.5rem;
@@ -148,7 +155,7 @@ if ($kelas_aktif && !in_array($kelas_aktif, $daftar_kelas)) {
       font-size: 1.1rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--white);
       margin-bottom: 4px;
     }
     .gold-line {
@@ -259,6 +266,7 @@ if ($kelas_aktif && !in_array($kelas_aktif, $daftar_kelas)) {
     .tag-piket {
       font-size: 0.72rem;
       background: rgba(255,255,255,0.03);
+      border-radius: 5px;
       padding: 3px 10px;
       border: 1px solid rgba(255,255,255,0.08);
       color: var(--gray-200);
@@ -301,6 +309,7 @@ if ($kelas_aktif && !in_array($kelas_aktif, $daftar_kelas)) {
 <div class="container">
   <header>
     <div class="header-title-area">
+      <!--<img src="assets/images/logo-bengpus.png" alt="Logo Puskomlekad" class="header-logo">-->
       <h1>Piket <span>Bengpus Puskomlekad</span></h1>
       <div class="header-date"><?= $tanggal_hari_ini ?></div>
     </div>
@@ -362,7 +371,7 @@ if ($kelas_aktif && !in_array($kelas_aktif, $daftar_kelas)) {
     </div>
 
     <div class="panel-kanan">
-      <h2 class="panel-header">Data Apel</h2>
+      <h2 class="panel-header">Data <span style="color:var(--gold)">Apel</span></h2>
       <div class="gold-line"></div>
       
       <div style="margin-bottom: 40px;">
@@ -377,7 +386,7 @@ if ($kelas_aktif && !in_array($kelas_aktif, $daftar_kelas)) {
             
             <?php if (isset($rekap[$kelas])): ?>
               <div class="metrics-line">
-                <span>Kuat: <strong><?= $rekap[$kelas]['total'] ?></strong></span>
+                <span>Jumlah: <strong><?= $rekap[$kelas]['total'] ?></strong></span>
                 <span>Hadir: <strong><?= $rekap[$kelas]['hadir'] ?></strong></span>
                 <span>Kurang: <strong style="color:#ff6b7a;"><?= $rekap[$kelas]['kurang'] ?></strong></span>
               </div>

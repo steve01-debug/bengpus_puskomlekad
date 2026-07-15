@@ -133,7 +133,6 @@ $conn->close();
     .btn-add:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(201,168,76,0.3); }
     .form-card { background:rgba(10,22,40,0.6); border:1px solid rgba(201,168,76,0.15); border-radius:12px; padding:28px; margin-bottom:32px; }
     .form-card h3 { font-family:'Oswald',sans-serif; font-size:1.1rem; text-transform:uppercase; letter-spacing:2px; color:var(--gold); margin-bottom:24px; padding-bottom:12px; border-bottom:1px solid rgba(201,168,76,0.1); }
-    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
     .form-group { margin-bottom:16px; }
     .form-group label { display:block; font-size:0.78rem; text-transform:uppercase; letter-spacing:1.5px; color:var(--gray-300); margin-bottom:8px; }
     .form-group input, .form-group select { width:100%; padding:11px 14px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); border-radius:8px; color:var(--white); font-size:0.9rem; font-family:'Inter',sans-serif; transition:all 0.2s; }
@@ -192,7 +191,6 @@ $conn->close();
       .main-content{margin-left:0;width:100%}
       .topbar{padding:15px 20px}
       .content-area{padding:16px}
-      .form-row{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -267,15 +265,10 @@ $conn->close();
           <input type="text" name="nama" required placeholder="Contoh: Kolonel Cke Nama Lengkap, S.Sos." value="<?= htmlspecialchars($editData['nama'] ?? '') ?>">
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>Masa Jabatan *</label>
-            <input type="text" name="masa_jabatan" required placeholder="Contoh: 2025 - Sekarang" value="<?= htmlspecialchars($editData['masa_jabatan'] ?? '') ?>">
-          </div>
-          <div class="form-group">
-            <label>Urutan Tampilan (angka lebih besar = lebih atas)</label>
-            <input type="number" name="urutan" value="<?= $editData['urutan'] ?? 0 ?>" min="0">
-          </div>
+        <div class="form-group">
+          <label>Masa Jabatan *</label>
+          <input type="text" name="masa_jabatan" id="inputMasaJabatan" required placeholder="Contoh: 2025 - Sekarang" value="<?= htmlspecialchars($editData['masa_jabatan'] ?? '') ?>">
+          <input type="hidden" name="urutan" id="inputUrutan" value="<?= $editData['urutan'] ?? 0 ?>">
         </div>
 
         <div class="form-group">
@@ -432,6 +425,22 @@ function doConfirm() {
 }
 document.getElementById('confirmOverlay').addEventListener('click', function(e) {
   if (e.target === this) closeConfirm();
+});
+
+// ─── Otomatisasi Mengisi Input Urutan secara Tersembunyi (Hidden) ───
+document.addEventListener('DOMContentLoaded', function() {
+  const masaJabatanInput = document.getElementById('inputMasaJabatan');
+  const urutanInput = document.getElementById('inputUrutan');
+
+  if (masaJabatanInput && urutanInput) {
+    masaJabatanInput.addEventListener('input', function() {
+      // Mencari 4 angka berurutan pertama (tahun awal) dari apa yang diketik pengguna
+      const match = this.value.match(/\d{4}/);
+      if (match) {
+        urutanInput.value = match[0];
+      }
+    });
+  }
 });
 </script>
 </body>

@@ -6,7 +6,7 @@
         </div>
         <div class="gold-line"></div>
         <p class="section-subtitle fade-in">
-          Profil BENGPUSKOMLEKAD terkait layanan fasilitas dan layanan kami melalui video profil perusahaan.
+          Profil BENGPUS PUSKOMLEKAD terkait layanan fasilitas dan layanan kami melalui video profil perusahaan.
         </p>
         <div class="video-container scale-in" id="video-container">
           <div class="video-play-overlay" id="video-overlay" onclick="playVideo()">

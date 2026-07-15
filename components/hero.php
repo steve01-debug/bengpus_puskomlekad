@@ -28,10 +28,6 @@
         </div>
       </div>
 
-      <div class="hero-side-info">
-        <div class="hero-counter">25+</div>
-        <div class="hero-counter-label">Tahun Pengalaman</div>
-      </div>
 
       <div class="scroll-indicator">
         <span>Scroll</span>

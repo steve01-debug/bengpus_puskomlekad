@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login – BENGPUSKOMLEKAD</title>
+  <title>Admin Login â€“ BENGPUSKOMLEKAD</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -271,7 +271,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
 
       <?php if ($error): ?>
-        <div class="error-msg">⚠️ <?= htmlspecialchars($error) ?></div>
+        <div class="error-msg">âš ï¸ <?= htmlspecialchars($error) ?></div>
       <?php endif; ?>
 
       <form method="POST" action="">
@@ -283,11 +283,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <label for="password">Password</label>
           <input type="password" id="password" name="password" placeholder="Masukkan password" required autocomplete="current-password">
         </div>
-        <button type="submit" class="submit-btn">Masuk →</button>
+        <button type="submit" class="submit-btn">Masuk &rarr;</button>
       </form>
 
-      <a href="index.php" class="back-link">← Kembali ke Website</a>
-      <!--<div class="classified-badge">🔒 Akses Terbatas – Personel Berwenang</div>-->
+      <a href="index.php" class="back-link">â† Kembali ke Website</a>
+      <!--<div class="classified-badge">ðŸ”’ Akses Terbatas â€“ Personel Berwenang</div>-->
     </div>
   </div>
 </body>

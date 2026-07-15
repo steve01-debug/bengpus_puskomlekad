@@ -10,7 +10,7 @@ $base = $isHome ? '' : 'index.php';
         <div class="logo-img-container">
           <img src="assets/images/logo-bengpus.png" alt="Logo BENGPUSKOMLEKAD">
         </div>
-        <div class="logo-text">BENGPUS<span>KOMLEKAD</span></div>
+        <div class="logo-text">BENGPUS<span> PUSKOMLEKAD</span></div>
       </a>
 
       <div class="navbar-menu" id="navbar-menu">

@@ -1,7 +1,5 @@
 -- Database dan tabel feedback untuk BENGPUSKOMLEKAD
-CREATE DATABASE IF NOT EXISTS bengpuskomlekad CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-USE bengpuskomlekad;
 
 CREATE TABLE IF NOT EXISTS feedback (
     id INT AUTO_INCREMENT PRIMARY KEY,

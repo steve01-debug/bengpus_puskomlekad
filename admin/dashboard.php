@@ -35,7 +35,7 @@ $totalFeedback = count($feedbacks);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard – BENGPUSKOMLEKAD</title>
+  <title>Admin Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -152,23 +152,32 @@ $totalFeedback = count($feedbacks);
     }
     .logout-btn {
       display: flex;
+      justify-content: center;
       align-items: center;
       gap: 10px;
       width: 100%;
-      padding: 10px 16px;
-      background: rgba(220,53,69,0.1);
-      border: 1px solid rgba(220,53,69,0.2);
-      border-radius: 8px;
-      color: #ff6b7a;
+      padding: 15px;
+      background: linear-gradient(to right, rgba(201, 168, 76, 0) 0%, rgba(201, 168, 76, 1) 50%, rgba(201, 168, 76, 0) 100%);
+      color: var(--navy-darkest);
       font-family: 'Oswald', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.95rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      border: none;
+      border-radius: 0;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
       text-decoration: none;
     }
-    .logout-btn:hover { background: rgba(220,53,69,0.2); }
+    .logout-btn:hover { 
+      color: #000000;
+      background: linear-gradient(to right, rgba(255, 215, 0, 0) 0%, rgba(255, 215, 0, 1) 50%, rgba(255, 215, 0, 0) 100%);
+      transform: translateY(-2px);
+      filter: drop-shadow(0 0 12px rgba(201, 168, 76, 0.5));
+    }
     /* Main content */
     .main-content {
       margin-left: 260px;
@@ -440,10 +449,67 @@ $totalFeedback = count($feedbacks);
       .main-content { margin-left: 220px; }
       .stats-row { grid-template-columns: 1fr 1fr; }
     }
+      /* Responsive & Mobile Admin */
+    .admin-hamburger {
+      display: none;
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      z-index: 1002;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .admin-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 99;
+    }
+    .admin-overlay.active { display: block; }
+    
+    .td-pesan-wrapper {
+      max-height: 48px;
+      overflow: hidden;
+      transition: max-height 0.3s;
+    }
+    .btn-expand-pesan {
+      background: none;
+      border: none;
+      color: var(--gray-300);
+      cursor: pointer;
+      font-size: 0.75rem;
+      margin-top: 5px;
+      display: inline-block;
+    }
+    .btn-expand-pesan:hover { color: #fff; }
+
+    @media (max-width: 900px) {
+      .admin-hamburger { display: block; }
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        background: #060d1a;
+      }
+      .sidebar.active { transform: translateX(0); }
+      .main-content { margin-left: 0; width: 100%; }
+      .topbar { padding: 15px 20px; }
+      .content-area { padding: 15px; }
+      .stats-row { grid-template-columns: 1fr; }
+      .feedback-table-wrap { overflow-x: auto; }
+    }
   </style>
 </head>
 <body>
 
+<!-- Hamburger Menu -->
+<button class="admin-hamburger" onclick="toggleAdminMenu()">☰</button>
+<div class="admin-overlay" onclick="toggleAdminMenu()"></div>
 <!-- Sidebar -->
 <aside class="sidebar">
   <div class="sidebar-logo">
@@ -455,10 +521,20 @@ $totalFeedback = count($feedbacks);
   </div>
   <nav class="sidebar-nav">
     <a href="dashboard.php" class="active">
-      <span class="nav-icon">📋</span> Feedback Masuk
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Feedback Masuk
+    </a>
+    <a href="berita.php">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Kelola Berita
+    </a>
+    <a href="pimpinan.php">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Kelola Pimpinan
     </a>
     <a href="../index.php" target="_blank">
-      <span class="nav-icon">🌐</span> Lihat Website
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Lihat Website
     </a>
   </nav>
   <div class="sidebar-footer">
@@ -473,7 +549,7 @@ $totalFeedback = count($feedbacks);
   <div class="topbar">
     <h1>Dashboard <span>Admin</span></h1>
     <!--<div class="topbar-info">
-      <span class="admin-badge">🔐 Admin</span>
+      <span class="admin-badge">Ã°Å¸â€Â Admin</span>
     </div>-->
   </div>
 
@@ -487,13 +563,13 @@ $totalFeedback = count($feedbacks);
         <!--<div class="stat-label">Total Feedback</div>-->
       </div>
       <div class="stat-card">
-        <!--<div class="stat-icon">📅</div>-->
+        <!--<div class="stat-icon">Ã°Å¸â€œâ€¦</div>-->
         <div class="stat-label">Tanggal</div>
         <div class="stat-num"><?= date('d F Y') ?></div>
         <!--<div class="stat-label"><?= date('F Y') ?></div>-->
       </div>
       <!--<div class="stat-card">
-        <div class="stat-icon">🛡️</div>
+        <div class="stat-icon">Ã°Å¸â€ºÂ¡Ã¯Â¸Â</div>
         <div class="stat-num">1</div>
         <div class="stat-label">Admin Aktif</div>
       </div>-->
@@ -520,7 +596,7 @@ $totalFeedback = count($feedbacks);
     <div class="feedback-table-wrap">
       <?php if (empty($feedbacks)): ?>
         <div class="empty-state">
-          <div class="empty-icon">📭</div>
+          <div class="empty-icon">Ã°Å¸â€œÂ­</div>
           <p>Belum ada feedback yang masuk.</p>
         </div>
       <?php else: ?>
@@ -552,13 +628,20 @@ $totalFeedback = count($feedbacks);
               <td class="td-email">
                 <a href="mailto:<?= htmlspecialchars($fb['email']) ?>"><?= htmlspecialchars($fb['email']) ?></a>
               </td>
-              <td class="td-pesan"><?= nl2br(htmlspecialchars($fb['pesan'])) ?></td>
+              <td class="td-pesan">
+                <div class="td-pesan-wrapper">
+                  <?= nl2br(htmlspecialchars($fb['pesan'])) ?>
+                </div>
+                <?php if (strlen($fb['pesan']) > 100): ?>
+                  <button class="btn-expand-pesan" onclick="togglePesan(this)">Selengkapnya</button>
+                <?php endif; ?>
+              </td>
               <td class="td-waktu"><?= date('d M Y', strtotime($fb['created_at'])) ?><br><span style="color:var(--white);"><?= date('H:i', strtotime($fb['created_at'])) ?></span></td>
               <td>
-                <a href="<?= $mailtoLink ?>" class="reply-btn">✉ Balas</a>
+                <a href="<?= $mailtoLink ?>" class="reply-btn">Balas</a>
                 <br>
                 <?php if (isset($fb['is_read']) && $fb['is_read'] == 0): ?>
-                  <a href="mark_read.php?id=<?= $fb['id'] ?>&filter=<?= $filter ?>" class="btn-read">✔ Tandai Dibaca</a>
+                  <a href="mark_read.php?id=<?= $fb['id'] ?>&filter=<?= $filter ?>" class="btn-read">Ã¢Å“â€ Tandai Dibaca</a>
                 <?php else: ?>
                   <span class="badge-read" style="margin-top: 8px;">Tandai Dibaca</span>
                 <?php endif; ?>
@@ -572,5 +655,21 @@ $totalFeedback = count($feedbacks);
   </div>
 </main>
 
+<script>
+function toggleAdminMenu() {
+  document.querySelector('.sidebar').classList.toggle('active');
+  document.querySelector('.admin-overlay').classList.toggle('active');
+}
+function togglePesan(btn) {
+  const textDiv = btn.previousElementSibling;
+  if (textDiv.style.maxHeight) {
+    textDiv.style.maxHeight = null;
+    btn.innerHTML = 'Selengkapnya';
+  } else {
+    textDiv.style.maxHeight = 'fit-content';
+    btn.innerHTML = 'Tutup';
+  }
+}
+</script>
 </body>
 </html>

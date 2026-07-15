@@ -3,7 +3,7 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <div class="logo-text">BENGPUS<span>KOMLEKAD</span></div>
+            <div class="logo-text">BENGPUS <span>PUSKOMLEKAD</span></div>
             <p>Bengkel Pusat Komunikasi dan Elektronika Angkatan Darat.</p>
             <!--<div class="social-links">
               <a href="mailto:admin@bengpuskomlek.co.id" class="social-link" data-tooltip="Email">✉</a>
@@ -26,9 +26,10 @@
           <div class="footer-column">
             <h4>Mitra</h4>
             <ul>
-              <li><a href="#" onclick="openWorkshop('umum'); return false;">Power Sistem & Sumga</a></li>
-              <li><a href="#" onclick="openWorkshop('elektronika'); return false;">Sistem Elektronika</a></li>
-              <li><a href="#" onclick="openWorkshop('komunikasi'); return false;">Sistem Komunikasi</a></li>
+              <li><a href="#">PT. BALATO INDONESIA</a></li>
+              <li><a href="#">PT. RANTIS TELEKOMUNIKASI INDONESIA</a></li>
+              <li><a href="#">CV. SYAFIRA INDIRA</a></li>
+              <li><a href="#">CV. IRPAN PUTRA</a></li>
             </ul>
           </div>
 
@@ -79,7 +80,7 @@
         </div>
 
         <div class="footer-bottom">
-          <span style="white-space: nowrap;">&copy; 2026 BENGPUSKOMLEKAD</span>
+          <span style="white-space: nowrap;">&copy; 2026 BENGPUS PUSKOMLEKAD</span>
           <span style="white-space: nowrap;">Universitas Pertahanan Republik Indonesia</span>
         </div>
       </div>

@@ -38,14 +38,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (!$msg && $judul) {
             if ($act === 'add') {
-                $stmt = $conn->prepare("INSERT INTO berita (judul, kategori, tanggal, gambar, isi) VALUES (?,?,?,?,?)");
+                $stmt = $conn->prepare("INSERT INTO berita_db (judul, kategori, tanggal, gambar, isi) VALUES (?,?,?,?,?)");
                 $stmt->bind_param("sssss", $judul, $kategori, $tanggal, $gambar, $isi);
                 $ok = $stmt->execute(); $stmt->close();
                 $msg = $ok ? 'Berita berhasil ditambahkan!' : 'Gagal menambahkan berita.';
                 $msgType = $ok ? 'success' : 'error';
             } else {
                 $id = (int)($_POST['id'] ?? 0);
-                $stmt = $conn->prepare("UPDATE berita SET judul=?,kategori=?,tanggal=?,gambar=?,isi=? WHERE id=?");
+                $stmt = $conn->prepare("UPDATE berita_db SET judul=?,kategori=?,tanggal=?,gambar=?,isi=? WHERE id=?");
                 $stmt->bind_param("sssssi", $judul, $kategori, $tanggal, $gambar, $isi, $id);
                 $ok = $stmt->execute(); $stmt->close();
                 $msg = $ok ? 'Berita berhasil diupdate!' : 'Gagal mengupdate berita.';
@@ -58,11 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     elseif ($act === 'delete') {
         $id = (int)($_POST['del_id'] ?? 0);
         if ($id) {
-            $res = $conn->query("SELECT gambar FROM berita WHERE id=$id");
+            $res = $conn->query("SELECT gambar FROM berita_db WHERE id=$id");
             if ($res && $row = $res->fetch_assoc()) {
                 if ($row['gambar'] && strpos($row['gambar'], 'assets/images/berita/') === 0) @unlink('../' . $row['gambar']);
             }
-            $conn->query("DELETE FROM berita WHERE id=$id");
+            $conn->query("DELETE FROM berita_db WHERE id=$id");
             header("Location: berita.php?msg=" . urlencode('Berita berhasil dihapus.') . "&type=success"); exit;
         }
     }
@@ -81,7 +81,7 @@ if (isset($_GET['add'])) { $showForm = true; }
 
 // Ambil semua berita
 $beritaList = [];
-$res = $conn->query("SELECT * FROM berita ORDER BY tanggal DESC, id DESC");
+$res = $conn->query("SELECT * FROM berita_db ORDER BY tanggal DESC, id DESC");
 if ($res) { while ($row = $res->fetch_assoc()) { $beritaList[] = $row; } }
 $conn->close();
 ?>
@@ -228,15 +228,23 @@ $conn->close();
   <nav class="sidebar-nav">
     <a href="dashboard.php">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      Feedback Masuk
+      Dashboard
     </a>
     <a href="berita.php" class="active">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
       Kelola Berita
     </a>
+    <a href="video.php">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+      Kelola Video Terkait
+    </a>
     <a href="pimpinan.php">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       Kelola Pimpinan
+    </a>
+    <a href="struktur.php">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="2" width="8" height="8" rx="1" ry="1"></rect><path d="M12 10v3"></path><path d="M3 13h18"></path><path d="M3 13v3"></path><path d="M21 13v3"></path><rect x="1" y="16" width="6" height="6" rx="1" ry="1"></rect><rect x="9" y="16" width="6" height="6" rx="1" ry="1"></rect><rect x="17" y="16" width="6" height="6" rx="1" ry="1"></rect></svg>
+      Kelola Struktur
     </a>
     <a href="../index.php" target="_blank">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -283,7 +291,7 @@ $conn->close();
         <?php endif; ?>
 
         <div class="form-group">
-          <label>Judul Berita *</label>
+          <label>Judul Berita</label>
           <input type="text" name="judul" required placeholder="Masukkan judul berita..." value="<?= htmlspecialchars($editData['judul'] ?? '') ?>">
         </div>
 
@@ -291,7 +299,7 @@ $conn->close();
           <div class="form-group">
             <label>Kategori</label>
             <select name="kategori">
-              <?php foreach(['LITBANG','Teknologi','Kerjasama','Kegiatan','Umum','Prestasi'] as $k): ?>
+              <?php foreach(['TEKNOLOGI','KEGIATAN'] as $k): ?>
               <option value="<?= $k ?>" <?= ($editData['kategori'] ?? '') === $k ? 'selected' : '' ?>><?= $k ?></option>
               <?php endforeach; ?>
             </select>
@@ -303,7 +311,7 @@ $conn->close();
         </div>
 
         <div class="form-group">
-          <label>Foto Berita<?= $editData ? ' (kosongkan jika tidak diganti)' : '' ?></label>
+          <label>Foto<?= $editData ? ' (kosongkan jika tidak diganti)' : '' ?></label>
           <input type="file" name="gambar" accept="image/*" onchange="previewImg(this)">
           <?php if (!empty($editData['gambar'])): ?>
           <img src="../<?= htmlspecialchars($editData['gambar']) ?>" class="img-preview show" id="imgPreview" alt="preview">
@@ -313,8 +321,8 @@ $conn->close();
         </div>
 
         <div class="form-group">
-          <label>Ringkasan / Isi Berita</label>
-          <textarea name="isi" placeholder="Tulis isi atau ringkasan berita..."><?= htmlspecialchars($editData['isi'] ?? '') ?></textarea>
+          <label>Isi Berita</label>
+          <textarea name="isi" placeholder="Tulis berita..."><?= htmlspecialchars($editData['isi'] ?? '') ?></textarea>
         </div>
 
         <div class="form-actions">

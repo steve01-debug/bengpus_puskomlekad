@@ -29,7 +29,7 @@
                   <span class="subbeng-icon">⚡</span>
                   <div class="subbeng-title">SUBBENG Aldallek</div>
                 </div>
-                <p class="subbeng-desc">Menangani pemeliharaan alat elektronika pendalaman (aldallek) yaitu perangkat deteksi, navigasi, dan sistem kendali tembak elektronik yang menjadi komponen vital dalam operasi pertahanan udara dan darat.</p>
+                <!--<p class="subbeng-desc">Menangani pemeliharaan alat elektronika pendalaman (aldallek) yaitu perangkat deteksi, navigasi, dan sistem kendali tembak elektronik yang menjadi komponen vital dalam operasi pertahanan udara dan darat.</p>-->
               </div>
 
               <div class="subbeng-card">
@@ -37,7 +37,7 @@
                   <span class="subbeng-icon">🔬</span>
                   <div class="subbeng-title">SUBBENG Alpernika</div>
                 </div>
-                <p class="subbeng-desc">Bertanggung jawab atas alat perlengkapan elektronika (alpernika) meliputi perangkat pendukung operasional elektronika lapangan, sistem penguat sinyal, antena taktis, dan perlengkapan elektronika pendukung satuan tempur.</p>
+                <!--<p class="subbeng-desc">Bertanggung jawab atas alat perlengkapan elektronika (alpernika) meliputi perangkat pendukung operasional elektronika lapangan, sistem penguat sinyal, antena taktis, dan perlengkapan elektronika pendukung satuan tempur.</p>-->
               </div>
 
               <div class="subbeng-card">
@@ -45,7 +45,7 @@
                   <span class="subbeng-icon">🖥️</span>
                   <div class="subbeng-title">SUBBENG Matindralek</div>
                 </div>
-                <p class="subbeng-desc">Mengelola perawatan material industri elektronika (matindralek) termasuk komponen elektronika industri yang digunakan dalam sistem persenjataan, kendaraan tempur berteknologi tinggi, dan instalasi tetap militer.</p>
+                <!--<p class="subbeng-desc">Mengelola perawatan material industri elektronika (matindralek) termasuk komponen elektronika industri yang digunakan dalam sistem persenjataan, kendaraan tempur berteknologi tinggi, dan instalasi tetap militer.</p>-->
               </div>
 
               <div class="subbeng-card">
@@ -53,7 +53,7 @@
                   <span class="subbeng-icon">🤖</span>
                   <div class="subbeng-title">SUBBENG Mekatronika</div>
                 </div>
-                <p class="subbeng-desc">Menangani sistem mekatronika militer yang mengintegrasikan mekanik, elektronika, dan kendali komputer, mencakup sistem aktuator senjata otomatis, robot penjinak bahan peledak (EOD), dan sistem penggerak berbasis servo.</p>
+                <!--<p class="subbeng-desc">Menangani sistem mekatronika militer yang mengintegrasikan mekanik, elektronika, dan kendali komputer, mencakup sistem aktuator senjata otomatis, robot penjinak bahan peledak (EOD), dan sistem penggerak berbasis servo.</p>-->
               </div>
 
             </div>

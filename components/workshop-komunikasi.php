@@ -28,7 +28,7 @@
                   <span class="subbeng-icon">📻</span>
                   <div class="subbeng-title">SUBBENG Radio Digilog</div>
                 </div>
-                <p class="subbeng-desc">Menangani pemeliharaan dan perbaikan radio komunikasi digital-analog (digilog) yang digunakan dalam operasi tempur, termasuk radio VHF/UHF taktis, radio HF, dan sistem interoperabilitas lintas satuan.</p>
+                <!--<p class="subbeng-desc">Menangani pemeliharaan dan perbaikan radio komunikasi digital-analog (digilog) yang digunakan dalam operasi tempur, termasuk radio VHF/UHF taktis, radio HF, dan sistem interoperabilitas lintas satuan.</p>-->
               </div>
 
               <div class="subbeng-card">
@@ -36,7 +36,7 @@
                   <span class="subbeng-icon">🖥️</span>
                   <div class="subbeng-title">SUBBENG Alkomsal & Multimedia</div>
                 </div>
-                <p class="subbeng-desc">Bertanggung jawab atas alat komunikasi saluran (alkomsal) meliputi sistem telepon lapangan, PABX militer, jaringan data pertempuran, serta perangkat multimedia untuk keperluan briefing dan komando.</p>
+                <!--<p class="subbeng-desc">Bertanggung jawab atas alat komunikasi saluran (alkomsal) meliputi sistem telepon lapangan, PABX militer, jaringan data pertempuran, serta perangkat multimedia untuk keperluan briefing dan komando.</p>-->
               </div>
 
               <div class="subbeng-card">
@@ -44,7 +44,7 @@
                   <span class="subbeng-icon">🛰️</span>
                   <div class="subbeng-title">SUBBENG Alkomsat</div>
                 </div>
-                <p class="subbeng-desc">Mengelola pemeliharaan alat komunikasi satelit (alkomsat) termasuk terminal VSAT militer, sistem komunikasi berbasis satelit geostasioner dan LEO, serta perangkat enkripsi transmisi satelit.</p>
+                <!--<p class="subbeng-desc">Mengelola pemeliharaan alat komunikasi satelit (alkomsat) termasuk terminal VSAT militer, sistem komunikasi berbasis satelit geostasioner dan LEO, serta perangkat enkripsi transmisi satelit.</p>-->
               </div>
 
             </div>

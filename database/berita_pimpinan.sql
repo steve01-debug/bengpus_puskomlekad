@@ -4,7 +4,7 @@
 -- ======================================================
 
 -- Tabel Berita
-CREATE TABLE IF NOT EXISTS berita (
+CREATE TABLE IF NOT EXISTS berita_db (
     id INT AUTO_INCREMENT PRIMARY KEY,
     judul VARCHAR(500) NOT NULL,
     kategori VARCHAR(100) DEFAULT 'Umum',
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS pimpinan_db (
 -- ======================================================
 -- SEED DATA BERITA (dari data hardcode sebelumnya)
 -- ======================================================
-INSERT IGNORE INTO berita (id, judul, kategori, tanggal, gambar, isi) VALUES
+INSERT IGNORE INTO berita_db (id, judul, kategori, tanggal, gambar, isi) VALUES
 (1, 'Drone Interceptor', 'LITBANG', '2026-06-12', 'assets/images/elektronika.jpeg',
  'BENGPUSKOMLEKAD sebagai unsur pelaksana pusat kecabangan berpartisipasi dalam gelar manuver lapangan yang merupakan bagian dari program Pendidikan Komponen Cadangan. Kegiatan ini merupakan bagian dari upaya modernisasi alutsista dan pengembangan teknologi pertahanan nasional.'),
 (2, 'Modernisasi Fasilitas Bengkel Elektronika dengan Peralatan Terkini', 'Teknologi', '2026-06-08', 'assets/images/gedung-bengpus.jpeg',

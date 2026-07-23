@@ -8,27 +8,30 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
 
 require_once '../config/db.php';
 
-// Ambil semua feedback dari DB
 $conn = getDB();
-$filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
 
-$whereClause = "";
-if ($filter === 'unread') {
-    $whereClause = "WHERE is_read = 0";
-} elseif ($filter === 'read') {
-    $whereClause = "WHERE is_read = 1";
-}
-
-$result = $conn->query("SELECT * FROM feedback $whereClause ORDER BY created_at DESC");
-$feedbacks = [];
+$totalBerita = 0;
+$result = $conn->query("SELECT COUNT(*) as co FROM berita_db");
 if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $feedbacks[] = $row;
-    }
+    $row = $result->fetch_assoc();
+    $totalBerita = $row['co'];
 }
-$conn->close();
 
-$totalFeedback = count($feedbacks);
+$totalVideo = 0;
+$result = $conn->query("SELECT COUNT(*) as co FROM video_terkait_db");
+if ($result) {
+    $row = $result->fetch_assoc();
+    $totalVideo = $row['co'];
+}
+
+$totalPimpinan = 0;
+$result = $conn->query("SELECT COUNT(*) as co FROM pimpinan_db");
+if ($result) {
+    $row = $result->fetch_assoc();
+    $totalPimpinan = $row['co'];
+}
+
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -503,6 +506,83 @@ $totalFeedback = count($feedbacks);
       .stats-row { grid-template-columns: 1fr; }
       .feedback-table-wrap { overflow-x: auto; }
     }
+
+    /* Welcome Card & Navigation Cards */
+    .welcome-card {
+      background: rgba(10, 22, 40, 0.6);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .welcome-card h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .welcome-card p {
+      font-size: 0.95rem;
+      color: var(--gray-200);
+      line-height: 1.6;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+    .menu-card {
+      background: rgba(10, 22, 40, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 20px;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .menu-card:hover {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.03);
+      transform: translateY(-2px);
+    }
+    .menu-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .menu-card p {
+      font-size: 0.85rem;
+      color: var(--gray-300);
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .menu-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    .menu-link:hover {
+      color: var(--gold-light);
+    }
+    @media (max-width: 768px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -516,21 +596,28 @@ $totalFeedback = count($feedbacks);
     <div class="logo-img-wrap">
       <img src="../assets/images/logo-bengpus.png" alt="Logo">
     </div>
-    <h2>BENGPUS<span> PUSKOMLEKAD</span></h2>
-    <!--<p>Admin Panel</p>-->
+    <h2>BENGPUS<span> PUSKOMLEKAD</span></h2>    <!--<p>Admin Panel</p>-->
   </div>
   <nav class="sidebar-nav">
     <a href="dashboard.php" class="active">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      Feedback Masuk
+      Dashboard
     </a>
     <a href="berita.php">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
       Kelola Berita
     </a>
+    <a href="video.php">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+      Kelola Video Terkait
+    </a>
     <a href="pimpinan.php">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       Kelola Pimpinan
+    </a>
+    <a href="struktur.php">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="2" width="8" height="8" rx="1" ry="1"></rect><path d="M12 10v3"></path><path d="M3 13h18"></path><path d="M3 13v3"></path><path d="M21 13v3"></path><rect x="1" y="16" width="6" height="6" rx="1" ry="1"></rect><rect x="9" y="16" width="6" height="6" rx="1" ry="1"></rect><rect x="17" y="16" width="6" height="6" rx="1" ry="1"></rect></svg>
+      Kelola Struktur
     </a>
     <a href="../index.php" target="_blank">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -548,109 +635,63 @@ $totalFeedback = count($feedbacks);
 <main class="main-content">
   <div class="topbar">
     <h1>Dashboard <span>Admin</span></h1>
-    <!--<div class="topbar-info">
-      <span class="admin-badge">Ã°Å¸â€Â Admin</span>
-    </div>-->
   </div>
 
   <div class="content-area">
     <!-- Stats -->
     <div class="stats-row">
       <div class="stat-card">
-        <!--<div class="stat-icon">Total Feedback</div>-->
-        <div class="stat-label">Total Feedback</div>
-        <div class="stat-num"><?= $totalFeedback ?></div>
-        <!--<div class="stat-label">Total Feedback</div>-->
+        <div class="stat-label">Total Berita</div>
+        <div class="stat-num"><?= $totalBerita ?></div>
       </div>
       <div class="stat-card">
-        <!--<div class="stat-icon">Ã°Å¸â€œâ€¦</div>-->
-        <div class="stat-label">Tanggal</div>
-        <div class="stat-num"><?= date('d F Y') ?></div>
-        <!--<div class="stat-label"><?= date('F Y') ?></div>-->
+        <div class="stat-label">Total Video Terkait</div>
+        <div class="stat-num"><?= $totalVideo ?></div>
       </div>
-      <!--<div class="stat-card">
-        <div class="stat-icon">Ã°Å¸â€ºÂ¡Ã¯Â¸Â</div>
-        <div class="stat-num">1</div>
-        <div class="stat-label">Admin Aktif</div>
-      </div>-->
+      <div class="stat-card">
+        <div class="stat-label">Total Pimpinan</div>
+        <div class="stat-num"><?= $totalPimpinan ?></div>
+      </div>
     </div>
 
-    <!-- Notice -->
-    <div class="notice-banner">
-      <span class="notice-icon">ℹ️</span>
-      <span>Sebagai admin, Anda <strong>hanya dapat melihat dan membalas</strong> feedback. Data tidak dapat dihapus atau diubah untuk menjaga integritas catatan.</span>
-    </div>
-
-    <!-- Feedback list -->
-    <div class="section-header">
-      <h2>Daftar <span>Feedback</span></h2>
-    </div>
-    <div class="gold-line-left"></div>
-
-    <div class="filter-tabs">
-      <a href="dashboard.php?filter=all" class="<?= $filter=='all'?'active':'' ?>">Semua</a>
-      <a href="dashboard.php?filter=unread" class="<?= $filter=='unread'?'active':'' ?>">Belum Dibaca</a>
-      <a href="dashboard.php?filter=read" class="<?= $filter=='read'?'active':'' ?>">Sudah Dibaca</a>
-    </div>
-
-    <div class="feedback-table-wrap">
-      <?php if (empty($feedbacks)): ?>
-        <div class="empty-state">
-          <div class="empty-icon">Ã°Å¸â€œÂ­</div>
-          <p>Belum ada feedback yang masuk.</p>
+    <!-- Welcome Card -->
+    <div class="welcome-card">
+      <h2>Selamat Datang, Administrator</h2>
+      <p>Ini adalah halaman Dashboard Admin BENGPUS PUSKOMLEKAD. Dari sini Anda dapat memperbarui informasi, berita, video profil terkait, pimpinan, dan bagan struktur organisasi yang ditampilkan pada website publik.</p>
+      
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div>
+            <h3>Kelola Berita</h3>
+            <p>Tambah berita, edit artikel, atau hapus berita seputar kegiatan BENGPUS PUSKOMLEKAD.</p>
+          </div>
+          <a href="berita.php" class="menu-link">Kelola Berita →</a>
         </div>
-      <?php else: ?>
-        <table class="feedback-table">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Nama</th>
-              <th>Email</th>
-              <th>Pesan</th>
-              <th>Waktu</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach ($feedbacks as $i => $fb): 
-              $replySubject = urlencode('Re: Feedback kepada BENGPUSKOMLEKAD');
-              $replyBody    = urlencode("Kepada Yth. " . $fb['nama'] . ",\n\nTerima kasih atas feedback Anda.\n\n---\nPesan Anda:\n" . $fb['pesan'] . "\n\n---\nHormat kami,\nTim BENGPUSKOMLEKAD");
-              $mailtoLink   = "mailto:" . htmlspecialchars($fb['email']) . "?subject=" . $replySubject . "&body=" . $replyBody;
-            ?>
-            <tr>
-              <td style="color:var(--white); font-size:0.78rem;"><?= $i + 1 ?></td>
-              <td class="td-nama">
-                <?= htmlspecialchars($fb['nama']) ?>
-                <?php if (isset($fb['is_read']) && $fb['is_read'] == 0): ?>
-                  <span class="badge-new">Baru</span>
-                <?php endif; ?>
-              </td>
-              <td class="td-email">
-                <a href="mailto:<?= htmlspecialchars($fb['email']) ?>"><?= htmlspecialchars($fb['email']) ?></a>
-              </td>
-              <td class="td-pesan">
-                <div class="td-pesan-wrapper">
-                  <?= nl2br(htmlspecialchars($fb['pesan'])) ?>
-                </div>
-                <?php if (strlen($fb['pesan']) > 100): ?>
-                  <button class="btn-expand-pesan" onclick="togglePesan(this)">Selengkapnya</button>
-                <?php endif; ?>
-              </td>
-              <td class="td-waktu"><?= date('d M Y', strtotime($fb['created_at'])) ?><br><span style="color:var(--white);"><?= date('H:i', strtotime($fb['created_at'])) ?></span></td>
-              <td>
-                <a href="<?= $mailtoLink ?>" class="reply-btn">Balas</a>
-                <br>
-                <?php if (isset($fb['is_read']) && $fb['is_read'] == 0): ?>
-                  <a href="mark_read.php?id=<?= $fb['id'] ?>&filter=<?= $filter ?>" class="btn-read">Ã¢Å“â€ Tandai Dibaca</a>
-                <?php else: ?>
-                  <span class="badge-read" style="margin-top: 8px;">Tandai Dibaca</span>
-                <?php endif; ?>
-              </td>
-            </tr>
-            <?php endforeach; ?>
-          </tbody>
-        </table>
-      <?php endif; ?>
+        
+        <div class="menu-card">
+          <div>
+            <h3>Kelola Video Terkait</h3>
+            <p>Atur video profil terkait dan video dokumentasi kegiatan resmi yang bersumber dari YouTube.</p>
+          </div>
+          <a href="video.php" class="menu-link">Kelola Video →</a>
+        </div>
+        
+        <div class="menu-card">
+          <div>
+            <h3>Kelola Pimpinan</h3>
+            <p>Perbarui data Kepala BENGPUS PUSKOMLEKAD dari masa ke masa serta foto pimpinan saat ini.</p>
+          </div>
+          <a href="pimpinan.php" class="menu-link">Kelola Pimpinan →</a>
+        </div>
+        
+        <div class="menu-card">
+          <div>
+            <h3>Kelola Struktur Organisasi</h3>
+            <p>Perbarui bagan gambar struktur organisasi terbaru agar dapat dilihat oleh publik secara jelas.</p>
+          </div>
+          <a href="struktur.php" class="menu-link">Kelola Struktur →</a>
+        </div>
+      </div>
     </div>
   </div>
 </main>
@@ -659,16 +700,6 @@ $totalFeedback = count($feedbacks);
 function toggleAdminMenu() {
   document.querySelector('.sidebar').classList.toggle('active');
   document.querySelector('.admin-overlay').classList.toggle('active');
-}
-function togglePesan(btn) {
-  const textDiv = btn.previousElementSibling;
-  if (textDiv.style.maxHeight) {
-    textDiv.style.maxHeight = null;
-    btn.innerHTML = 'Selengkapnya';
-  } else {
-    textDiv.style.maxHeight = 'fit-content';
-    btn.innerHTML = 'Tutup';
-  }
 }
 </script>
 </body>

@@ -22,9 +22,9 @@
           <a href="#about" class="btn-primary">
             Selengkapnya →
           </a>
-          <a href="#contact" class="btn-outline">
+          <!--<a href="#contact" class="btn-outline">
             Hubungi Kami
-          </a>
+          </a>-->
         </div>
       </div>
 

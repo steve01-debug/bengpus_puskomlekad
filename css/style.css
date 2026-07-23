@@ -1492,6 +1492,11 @@ textarea {
   padding-left: 5px;
 }
 
+.footer-column {
+  margin-left: 80px;
+  /* Sesuaikan angka ini sesuai kebutuhan jarak antar kolom */
+}
+
 .footer-contact-item {
   display: flex;
   align-items: flex-start;

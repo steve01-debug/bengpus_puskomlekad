@@ -24,7 +24,7 @@
       if (!function_exists('getDB')) { require_once 'config/db.php'; }
       $_conn_berita = getDB();
       $_beritaAll = [];
-      $_res_b = $_conn_berita->query("SELECT * FROM berita ORDER BY tanggal DESC, id DESC");
+      $_res_b = $_conn_berita->query("SELECT * FROM berita_db ORDER BY tanggal DESC, id DESC");
       if ($_res_b) { while ($r = $_res_b->fetch_assoc()) { $_beritaAll[] = $r; } }
       $_conn_berita->close();
       ?>

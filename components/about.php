@@ -23,7 +23,7 @@
           </div>
         </div>
 
-        <div class="about-stats-laporan fade-in">
+        <!--<div class="about-stats-laporan fade-in">
           <div class="stat-item-laporan">
             <div class="stat-val-laporan counter-animated" data-target="125">0</div>
             <div class="stat-lbl-laporan">Personel</div>
@@ -32,6 +32,6 @@
             <div class="stat-val-laporan counter-animated" data-target="3">0</div>
             <div class="stat-lbl-laporan">Unit Selesai</div>
           </div>
-        </div>
+        </div>-->
       </div>
     </section>

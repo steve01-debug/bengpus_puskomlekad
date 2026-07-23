@@ -28,7 +28,7 @@
                   <span class="subbeng-icon">🔗</span>
                   <div class="subbeng-title">SUBBENG Integrasi</div>
                 </div>
-                <p class="subbeng-desc">Menangani integrasi sistem elektronika dan komunikasi militer, meliputi pemasangan, konfigurasi, dan pengujian sistem terintegrasi pada platform kendaraan tempur, pos komando lapangan, dan instalasi pertahanan. Memastikan interoperabilitas antar sistem dari berbagai vendor dan generasi teknologi.</p>
+                <!--<p class="subbeng-desc">Menangani integrasi sistem elektronika dan komunikasi militer, meliputi pemasangan, konfigurasi, dan pengujian sistem terintegrasi pada platform kendaraan tempur, pos komando lapangan, dan instalasi pertahanan. Memastikan interoperabilitas antar sistem dari berbagai vendor dan generasi teknologi.</p>-->
               </div>
 
               <div class="subbeng-card">
@@ -36,7 +36,7 @@
                   <span class="subbeng-icon">⚡</span>
                   <div class="subbeng-title">SUBBENG Power Sistem</div>
                 </div>
-                <p class="subbeng-desc">Bertanggung jawab atas pemeliharaan dan perbaikan seluruh sistem sumber tenaga militer, mencakup generator set militer, sistem UPS, solar power system lapangan, baterai taktis, konverter daya, dan sistem distribusi listrik untuk instalasi militer tetap maupun bergerak.</p>
+                <!--<p class="subbeng-desc">Bertanggung jawab atas pemeliharaan dan perbaikan seluruh sistem sumber tenaga militer, mencakup generator set militer, sistem UPS, solar power system lapangan, baterai taktis, konverter daya, dan sistem distribusi listrik untuk instalasi militer tetap maupun bergerak.</p>-->
               </div>
 
             </div>

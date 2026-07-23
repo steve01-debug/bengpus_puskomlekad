@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login â€“ BENGPUSKOMLEKAD</title>
+  <title>Admin Login</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -286,7 +286,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="submit-btn">Masuk &rarr;</button>
       </form>
 
-      <a href="index.php" class="back-link">â† Kembali ke Website</a>
+      <a href="index.php" class="back-link">← Kembali ke Website</a>
       <!--<div class="classified-badge">ðŸ”’ Akses Terbatas â€“ Personel Berwenang</div>-->
     </div>
   </div>

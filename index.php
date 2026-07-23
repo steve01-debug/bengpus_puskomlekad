@@ -8,7 +8,7 @@
 <?php include 'components/about.php'; ?>
 <?php include 'components/video.php'; ?>
 <?php include 'components/news.php'; ?>
-<?php include 'components/contact.php'; ?>
+
 <?php include 'components/footer.php'; ?>
 
   <!-- ========== WORKSHOP PAGES ========== -->

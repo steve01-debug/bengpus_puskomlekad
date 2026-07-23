@@ -29,7 +29,6 @@ $base = $isHome ? '' : 'index.php';
         </div>-->
 
         <a href="<?= $base ?>#news" data-nav="news" onclick="<?= $isHome ? 'closeMobileMenu()' : '' ?>">Berita</a>
-        <a href="<?= $base ?>#contact" data-nav="contact" onclick="<?= $isHome ? 'closeMobileMenu()' : '' ?>">Kontak</a>
         <div class="nav-dropdown" id="bengkel-dropdown">
           <button class="dropdown-trigger" onclick="toggleMobileDropdown(event)">
             Unit <span class="arrow">▼</span>

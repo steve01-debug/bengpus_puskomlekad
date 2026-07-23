@@ -94,7 +94,22 @@
           </div>
 
           <div class="pimpinan-timeline-item fade-in">
-            <div class="timeline-year">2019 – 2022</div>
+            <div class="timeline-year">2021 – 2022</div>
+            <div class="timeline-connector"></div>
+            <div class="pimpinan-card-small">
+              <div class="pimpinan-photo-small">
+                <img src="assets/images/kbm-anang.jpg" alt="Kolonel Chb Anang Murtioso, S.Si." class="pimpinan-kabeng-lama">
+              </div>
+              <div class="pimpinan-info-small">
+                <div class="pimpinan-jabatan-label-small">Kepala Bengpuskomlekad</div>
+                <div class="pimpinan-nama-small">Kolonel Chb Anang Murtioso, S.Si.</div>
+                <div class="pimpinan-nrp-small">NRP: 11XXXXXX</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pimpinan-timeline-item fade-in">
+            <div class="timeline-year">2019 – 2021</div>
             <div class="timeline-connector"></div>
             <div class="pimpinan-card-small">
               <div class="pimpinan-photo-small">
@@ -107,22 +122,6 @@
               </div>
             </div>
           </div>
-
-          <div class="pimpinan-timeline-item fade-in">
-            <div class="timeline-year">2019 – 2020</div>
-            <div class="timeline-connector"></div>
-            <div class="pimpinan-card-small">
-              <div class="pimpinan-photo-small">
-                <span> 😬 </span>
-              </div>
-              <div class="pimpinan-info-small">
-                <div class="pimpinan-jabatan-label-small">Kepala Bengpuskomlekad</div>
-                <div class="pimpinan-nama-small">Kolonel Chb Anang Murtioso, S.Si.</div>
-                <div class="pimpinan-nrp-small">NRP: 11XXXXXX</div>
-              </div>
-            </div>
-          </div>
-
           <div class="pimpinan-timeline-item fade-in">
             <div class="timeline-year">2018 – 2019</div>
             <div class="timeline-connector"></div>
@@ -173,11 +172,11 @@
             <div class="timeline-connector"></div>
             <div class="pimpinan-card-small">
               <div class="pimpinan-photo-small">
-                <img src="assets/images/kabeng-totok.jpg" alt="Kolonel Chb Totok" class="pimpinan-kabeng-lama">
+                <img src="assets/images/kabeng-totok.jpg" alt="Kolonel Chb Totok Surahmat" class="pimpinan-kabeng-lama">
               </div>
               <div class="pimpinan-info-small">
                 <div class="pimpinan-jabatan-label-small">Kepala Bengpuskomlekad</div>
-                <div class="pimpinan-nama-small">Kolonel Chb Totok</div>
+                <div class="pimpinan-nama-small">Kolonel Chb Totok Surahmat</div>
                 <div class="pimpinan-nrp-small">NRP: 11XXXXXX</div>
               </div>
             </div>
@@ -244,7 +243,7 @@
           </div>
 
           <div class="pimpinan-timeline-item fade-in">
-            <div class="timeline-year">1991 – 1997</div>
+            <div class="timeline-year">1992 – 1997</div>
             <div class="timeline-connector"></div>
             <div class="pimpinan-card-small">
               <div class="pimpinan-photo-small">
@@ -259,7 +258,7 @@
           </div>
 
           <div class="pimpinan-timeline-item fade-in">
-            <div class="timeline-year">1987 – 1991</div>
+            <div class="timeline-year">1988 – 1992</div>
             <div class="timeline-connector"></div>
             <div class="pimpinan-card-small">
               <div class="pimpinan-photo-small">
@@ -274,7 +273,7 @@
           </div>
 
           <div class="pimpinan-timeline-item fade-in">
-            <div class="timeline-year">1980 – 1987</div>
+            <div class="timeline-year">1980 – 1988</div>
             <div class="timeline-connector"></div>
             <div class="pimpinan-card-small">
               <div class="pimpinan-photo-small">
@@ -327,7 +326,7 @@
               </div>
               <div class="pimpinan-info-small">
                 <div class="pimpinan-jabatan-label-small">Kepala Bengpuskomlekad</div>
-                <div class="pimpinan-nama-small">Letnan Kolonel Chb Drondio (alm)</div>
+                <div class="pimpinan-nama-small">Letnan Kolonel Chb Daroendio (alm)</div>
                 <div class="pimpinan-nrp-small">NRP: 11XXXXXX</div>
               </div>
             </div>

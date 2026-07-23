@@ -23,19 +23,15 @@
           </div>
         </div>
 
-        <div class="about-stats fade-in">
-          <div class="stat-item">
-            <div class="stat-number counter-animated" data-target="125">0</div>
-            <div class="stat-label">Personel</div>
+        <!--<div class="about-stats-laporan fade-in">
+          <div class="stat-item-laporan">
+            <div class="stat-val-laporan counter-animated" data-target="125">0</div>
+            <div class="stat-lbl-laporan">Personel</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number counter-animated" data-target="1200">0</div>
-            <div class="stat-label">Proyek Selesai</div>
+          <div class="stat-item-laporan">
+            <div class="stat-val-laporan counter-animated" data-target="3">0</div>
+            <div class="stat-lbl-laporan">Unit Selesai</div>
           </div>
-          <div class="stat-item">
-            <div class="stat-number counter-animated" data-target="3">0</div>
-            <div class="stat-label">Unit Bengkel</div>
-          </div>
-        </div>
+        </div>-->
       </div>
     </section>

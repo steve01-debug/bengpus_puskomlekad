@@ -8,7 +8,7 @@
 <?php include 'components/about.php'; ?>
 <?php include 'components/video.php'; ?>
 <?php include 'components/news.php'; ?>
-<?php include 'components/contact.php'; ?>
+
 <?php include 'components/footer.php'; ?>
 
   <!-- ========== WORKSHOP PAGES ========== -->
@@ -17,6 +17,9 @@
 <?php include 'components/workshop-umum.php'; ?>
 <?php include 'components/workshop-elektronika.php'; ?>
 <?php include 'components/workshop-komunikasi.php'; ?>
+<?php include 'components/workshop-senjata.php'; ?>
+<?php include 'components/workshop-kendaraan.php'; ?>
+
 <?php include 'components/pimpinan.php'; ?>
 <?php include 'components/struktur-organisasi.php'; ?>
 

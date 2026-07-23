@@ -459,7 +459,7 @@ textarea {
 }
 
 .dropdown-menu a::before {
-  content: '▹';
+  content: 'â–¹';
   color: var(--gold);
   opacity: 0;
   transform: translateX(-10px);
@@ -480,8 +480,6 @@ textarea {
 .dropdown-menu a::after {
   display: none;
 }
-
-/* Login button removed – admin accesses via /entering */
 
 /* Mobile Menu */
 .hamburger {
@@ -1494,6 +1492,11 @@ textarea {
   padding-left: 5px;
 }
 
+.footer-column {
+  margin-left: 80px;
+  /* Sesuaikan angka ini sesuai kebutuhan jarak antar kolom */
+}
+
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
@@ -2487,7 +2490,7 @@ textarea {
 #page-pimpinan::before {
   content: "";
   position: fixed;
-  /* ini kunci efek “diam saat scroll” */
+  /* ini kunci efek â€œdiam saat scrollâ€ */
   top: 0;
   left: 0;
   width: 100%;
@@ -2775,7 +2778,7 @@ textarea {
 #page-orgas::before {
   content: "";
   position: fixed;
-  /* ini kunci efek “diam saat scroll” */
+  /* ini kunci efek â€œdiam saat scrollâ€ */
   top: 0;
   left: 0;
   width: 100%;
@@ -2994,5 +2997,153 @@ textarea {
 
   .timeline-connector {
     display: none;
+  }
+}
+
+/* ========================================
+   LAPORAN-STYLE STATS & SUBBENG (Responsive)
+   ======================================== */
+.about-stats-laporan,
+.subbeng-grid-laporan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  border-top: 1px solid rgba(201, 168, 76, 0.3);
+  margin-top: 35px;
+  padding-top: 25px;
+  text-align: left;
+}
+
+.stat-item-laporan,
+.subbeng-card-laporan {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 5px;
+  padding-right: 15px;
+}
+
+.stat-item-laporan:last-child,
+.subbeng-card-laporan:last-child {
+  border-right: none;
+}
+
+.stat-val-laporan {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--white);
+}
+
+.stat-lbl-laporan,
+.subbeng-lbl-laporan {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.subbeng-card-laporan {
+  margin-bottom: 15px;
+}
+
+.subbeng-lbl-laporan {
+  color: var(--gold);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+}
+
+/* ========================================
+   GLOBAL RESPONSIVE FIXES (Mobile/Tablet)
+   ======================================== */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .about-wrapper,
+  .workshop-desc-grid,
+  .orgas-layer,
+  .footer-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-stats-laporan {
+    grid-template-columns: 1fr;
+    border-top: none;
+  }
+
+  .stat-item-laporan,
+  .subbeng-card-laporan {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+  }
+
+  section,
+  .about-section,
+  .workshop-page {
+    padding: 40px 0 !important;
+    margin: 0 !important;
+  }
+
+  .hero-title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-content {
+    margin-top: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .about-wrapper,
+  .workshop-desc-grid {
+    flex-direction: column !important;
+    display: flex !important;
+  }
+
+  .about-image-wrapper {
+    margin-bottom: 20px;
+    width: 100% !important;
+  }
+
+  .orgas-card {
+    width: 100% !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workshop-gallery {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.6rem !important;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 }

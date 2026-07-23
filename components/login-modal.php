@@ -3,7 +3,7 @@
     <div class="login-modal" onclick="event.stopPropagation()">
       <button class="login-close" onclick="closeLogin()">✕</button>
       <div class="login-header">
-        <div class="login-logo">BENGPUSKOMLEKAD</div>
+        <div class="login-logo">BENGPUS PUSKOMLEKAD</div>
         <h2>Login</h2>
         <p>Masuk ke sistem administrasi</p>
       </div>
